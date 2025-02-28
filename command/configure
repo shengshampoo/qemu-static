@@ -11,7 +11,7 @@ RUN "/work/src/${QEMU_SRC_BASENAME}/configure" \
     --disable-werror \
     --enable-system \
     --enable-linux-user \
-    --target-list=x86_64-softmmu,x86_64-linux-user \
+    --target-list=x86_64-softmmu,x86_64-linux-user,aarch64-softmmu,aarch64-linux-user \
     --enable-kvm \
     --enable-virtfs \
     --enable-qcow1 \
@@ -19,16 +19,4 @@ RUN "/work/src/${QEMU_SRC_BASENAME}/configure" \
     --enable-fuse \
     --enable-cap-ng \
     --enable-slirp \
-    --enable-libusb \ 
-    --enable-usb-redir \
-    --enable-vnc \
-    --enable-sdl \
-    --enable-sdl-image \
-    --enable-linux-aio \
-    --enable-linux-io-uring \
-    --enable-pixman \
-    --enable-vvfat \
-    --enable-zstd \
-    --enable-strip \
-    --enable-lto \
-    --static
+    --enable-libusb --enable-usb-redir --enable-vnc --enable-sdl --enable-sdl-image --enable-linux-aio --enable-linux-io-uring --enable-pixman --enable-vvfat --enable-zstd --enable-strip --enable-lto --static
