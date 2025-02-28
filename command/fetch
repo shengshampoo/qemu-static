@@ -11,5 +11,5 @@ if [ -n "$QEMU_GIT_COMMIT" ]; then
     cd $QEMU_SRC_BASENAME
     git checkout $QEMU_GIT_COMMIT
 else
-    RUN wget "${QEMU_SRC_URL}"
+    RUN aria2c -x2 -R "${QEMU_SRC_URL}"
 fi
