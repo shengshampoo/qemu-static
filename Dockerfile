@@ -1,7 +1,7 @@
 FROM alpine:3.21
 
 # https://mirrors.alpinelinux.org/
-RUN sed -i 's@dl-cdn.alpinelinux.org/alpine@ftp.halifax.rwth-aachen.de@g' /etc/apk/repositories
+RUN sed -i 's@dl-cdn.alpinelinux.org@ftp.halifax.rwth-aachen.de@g' /etc/apk/repositories
 
 RUN apk update
 RUN apk upgrade
