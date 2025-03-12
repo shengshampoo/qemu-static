@@ -19,8 +19,8 @@ RUN apk add --no-cache \
  glib-dev glib-static \
  zlib-dev zlib-static \
  zstd-dev zstd-static \
- flex \
- bison bash xz git patch aria2 cmake
+ flex swig bison py3-setuptools \
+ bash xz git patch aria2 cmake
 
 
 # required to compile Slirp as static lib and qemu-system
