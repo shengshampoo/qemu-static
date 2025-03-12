@@ -11,7 +11,7 @@ RUN apk add --no-cache \
  make \
  samurai \
  perl \
- python3 \
+ python3 python3-dev \
  gcc \
  libc-dev \
  pkgconf \
