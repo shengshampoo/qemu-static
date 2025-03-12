@@ -96,6 +96,13 @@ cd build
 cmake .. -DBUILD_SHARED_LIBS=OFF
 make -j8 && make install 
 
+# dtc libfdt
+cd $WORKSPACE
+git clone https://git.kernel.org/pub/scm/utils/dtc/dtc.git
+cd dtc
+meson setup builddir -Dprefix=/usr --strip 
+cd builddir 
+ninja && DESTDIR=/ ninja install
 
 #clean
 rm -rf $WORKSPACE
