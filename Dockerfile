@@ -19,6 +19,7 @@ RUN apk add --no-cache \
  glib-dev glib-static \
  zlib-dev zlib-static \
  zstd-dev zstd-static \
+ pcre2-dev pcre2-static \
  flex swig bison py3-setuptools \
  bash xz git patch aria2 curl cmake
 
