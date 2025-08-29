@@ -55,9 +55,9 @@ ninja install
 
 #fuse
 cd $WORKSPACE
-aria2c -x2 -R https://github.com/libfuse/libfuse/releases/download/fuse-3.17.4/fuse-3.17.4.tar.gz
-tar -vxf fuse-3.17.4.tar.gz
-cd fuse-3.17.4
+aria2c -x2 -R https://github.com/libfuse/libfuse/releases/download/fuse-3.17.3/fuse-3.17.3.tar.gz
+tar -vxf fuse-3.17.3.tar.gz
+cd fuse-3.17.3
 curl -sL https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/fuse3/dont-mknod-dev-fuse.patch | patch -p1
 curl -sL https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/fuse3/mount_util.c-check-if-utab-exists-before-update.patch | patch -p1
 curl -sL https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/fuse3/workaround-the-lack-of-support-for-rename2-in-musl.patch | patch -p1
