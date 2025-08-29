@@ -7,7 +7,7 @@ set -e
 WORKDIR "/work/out/${QEMU_SRC_BASENAME}"
 RUN "/work/src/${QEMU_SRC_BASENAME}/configure" \
     --prefix="/work/dst/${QEMU_ARTIFACT_BASENAME}" \
-    --extra-ldflags='-static --static -no-pie -s -L/usr/lib -lgio -lgirepository -lglib -lgmodule -lgobject -lgthread' \
+    --extra-ldflags="-static --static -no-pie -s -L/usr/lib -lgio -lgirepository -lglib -lgmodule -lgobject -lgthread" \
     --disable-debug-info \
     --disable-werror \
     --enable-system \
