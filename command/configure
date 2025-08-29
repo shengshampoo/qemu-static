@@ -7,7 +7,6 @@ set -e
 WORKDIR "/work/out/${QEMU_SRC_BASENAME}"
 RUN "/work/src/${QEMU_SRC_BASENAME}/configure" \
     --prefix="/work/dst/${QEMU_ARTIFACT_BASENAME}" \
-    --extra-ldflags=-lgio \
     --disable-debug-info \
     --disable-werror \
     --enable-system \
