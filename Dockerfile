@@ -55,6 +55,7 @@ COPY command/patch command/patch
 RUN /work/command/patch
 
 COPY command/configure command/configure
+ENV "LDFLAGS=\"-lgio -lgirepository -lglib -lgmodule -lgobject -lgthread\" "
 RUN /work/command/configure
 
 COPY command/make command/make
