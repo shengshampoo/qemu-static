@@ -16,7 +16,6 @@ RUN apk add --no-cache \
  libc-dev \
  pkgconf \
  linux-headers \
- glib-dev glib-static \
  zlib-dev zlib-static \
  zstd-dev zstd-static \
  pcre2-dev pcre2-static \
