@@ -5,7 +5,6 @@ set -e
 . $(dirname $0)/base
 
 WORKDIR "/work/out/${QEMU_SRC_BASENAME}"
-"LDFLAGS=\"-lgio -lgirepository -lglib -lgmodule -lgobject -lgthread\" "
 RUN "/work/src/${QEMU_SRC_BASENAME}/configure" \
     --prefix="/work/dst/${QEMU_ARTIFACT_BASENAME}" \
     --disable-debug-info \
