@@ -11,6 +11,17 @@ cd libslirp-master
 meson setup --default-library static build 
 ninja -C build install 
 
+#glib
+cd $WORKSPACE 
+aria2c -x2 -R https://download.gnome.org/sources/glib/2.85/glib-2.85.4.tar.xz
+tar -vxf glib-2.85.4
+cd glib-2.85.4
+mkdir build
+cd build
+meson setup --buildtype=release -Ddefault_library=static -Dtests=false ..
+ninja
+ninja install
+
 
 #libusb
 cd $WORKSPACE
