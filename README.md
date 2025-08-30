@@ -15,7 +15,7 @@ It is a non-goal to build older versions of QEMU.
 
 ## build docker image
 ```
-docker build --tag qemu .
+find . -maxdepth 1 -type d -name "qemu-static" -ok rm -r "{}" \; && git clone https://github.com/shengshampoo/qemu-static && cd qemu-static && docker build --tag qemu --network=host . 2>&1 | tee build.log
 ```
 
 ## run container, save ID, copy artifact(s)
