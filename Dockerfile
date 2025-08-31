@@ -20,6 +20,7 @@ RUN apk add --no-cache \
  zstd-dev zstd-static \
  pcre2-dev pcre2-static \
  flex swig bison py3-setuptools \
+ mold clang20 \
  bash xz git patch aria2 curl cmake
 
 
@@ -55,6 +56,10 @@ COPY command/patch command/patch
 RUN /work/command/patch
 
 COPY command/configure command/configure
+ENV CC=clang
+ENV CXX=clang++
+ENV CC_LD=mold
+ENV CXX_LD=mold
 RUN /work/command/configure
 
 COPY command/make command/make
