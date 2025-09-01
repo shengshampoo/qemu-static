@@ -11,16 +11,6 @@ cd libslirp-master
 meson setup --default-library static build 
 ninja -C build install 
 
-#glib
-cd $WORKSPACE 
-aria2c -x2 -R https://download.gnome.org/sources/glib/2.85/glib-2.85.4.tar.xz
-tar -vxf glib-2.85.4.tar.xz
-cd glib-2.85.4
-mkdir build
-cd build
-meson setup --buildtype=release -Ddefault_library=static -Dtests=false ..
-ninja
-ninja install
 
 #libusb
 cd $WORKSPACE
@@ -62,19 +52,6 @@ meson setup --buildtype=release -Ddefault_library=static ..
 ninja
 ninja install
 
-
-#fuse
-cd $WORKSPACE
-aria2c -x2 -R https://github.com/libfuse/libfuse/releases/download/fuse-3.17.4/fuse-3.17.4.tar.gz
-tar -vxf fuse-3.17.4.tar.gz
-cd fuse-3.17.4
-curl -sL https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/fuse3/dont-mknod-dev-fuse.patch | patch -p1
-curl -sL https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/fuse3/mount_util.c-check-if-utab-exists-before-update.patch | patch -p1
-curl -sL https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/fuse3/workaround-the-lack-of-support-for-rename2-in-musl.patch | patch -p1
-mkdir build
-cd build
-meson setup -Dprefix=/usr --buildtype=release -Ddefault_library=static ..
-ninja && DESTDIR=/ ninja install
 
 #SDL2
 cd $WORKSPACE
