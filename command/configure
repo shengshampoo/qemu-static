@@ -18,5 +18,5 @@ RUN "/work/src/${QEMU_SRC_BASENAME}/configure" \
     --enable-vmdk \
     --enable-fuse \
     --enable-cap-ng \
-    --enable-slirp --disable-passt \
+    --enable-slirp --disable-passt --enable-nettle \
     --enable-libusb --enable-usb-redir --enable-vnc --enable-sdl --enable-sdl-image --enable-fdt --enable-linux-aio --enable-linux-io-uring --enable-pixman --enable-vvfat --enable-zstd --enable-strip --enable-lto --static
