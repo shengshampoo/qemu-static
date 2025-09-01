@@ -22,7 +22,7 @@ RUN apk add --no-cache \
  flex swig bison py3-setuptools \
  glib-dev glib-static fuse3-dev fuse3-static \
  libgcrypt-dev libgcrypt-static nettle-dev nettle-static libgpg-error-dev libgpg-error-static \
- lzo-dev passt \
+ lzo-dev passt gmp-dev gmp-static \
  bash xz git patch aria2 curl cmake
 
 
