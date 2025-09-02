@@ -92,5 +92,15 @@ meson setup builddir -Dprefix=/usr --strip
 cd builddir 
 ninja && DESTDIR=/ ninja install
 
+# libeconf
+cd $WORKSPACE
+git clone https://github.com/openSUSE/libeconf.git
+cd libeconf
+mkdir build
+cd build
+meson setup --buildtype=release -Ddefault_library=static -Dprefix=/usr ..
+ninja
+ninja install
+
 #clean
 rm -rf $WORKSPACE
