@@ -22,7 +22,8 @@ RUN apk add --no-cache \
  flex swig bison py3-setuptools \
  libgcrypt-dev libgcrypt-static nettle-dev nettle-static libgpg-error-dev libgpg-error-static \
  lzo-dev passt gmp-dev gmp-static \
- bash xz git patch aria2 curl cmake
+ bash xz git patch aria2 curl cmake \
+ gettext autoconf automake libtool
 
 
 # required to compile Slirp as static lib and qemu-system
