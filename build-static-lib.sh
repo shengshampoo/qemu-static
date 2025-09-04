@@ -3,6 +3,16 @@
 WORKSPACE=/tmp/workspace
 mkdir -p $WORKSPACE
 
+
+# util-linux
+cd $WORKSPACE
+aria2c -x2 -R https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.1.tar.xz
+tar -vxf util-linux-2.41.1.tar.xz
+cd util-linux-2.41.1
+./autogen.sh && ./configure --prefix=/usr --enable-static --disable-shared
+make -j8
+make install
+
 #libslirp
 cd $WORKSPACE
 aria2c -x2 -R https://gitlab.freedesktop.org/slirp/libslirp/-/archive/master/libslirp-master.tar.bz2
