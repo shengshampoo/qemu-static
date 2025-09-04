@@ -28,7 +28,8 @@ RUN apk add --no-cache \
 
 # required to compile Slirp as static lib and qemu-system
 RUN apk add --no-cache \
- bzip2-static ncurses-static \
+ bzip2-dev bzip2-static ncurses-static \
+ libpng-dev libpng-static libjpeg-turbo-static libjpeg-turbo-dev \
  libxkbcommon-static libxkbcommon-dev \
  libx11-static zstd-static \
  git meson ninja-build gettext-static libjpeg-turbo-static cyrus-sasl-static \
