@@ -13,13 +13,6 @@ cd util-linux-2.41.1
 make -j8
 make install
 
-#libslirp
-cd $WORKSPACE
-aria2c -x2 -R https://gitlab.freedesktop.org/slirp/libslirp/-/archive/master/libslirp-master.tar.bz2
-tar -vxf libslirp-master.tar.bz2
-cd libslirp-master
-meson setup --default-library static build 
-ninja -C build install 
 
 # libeconf
 cd $WORKSPACE
@@ -58,6 +51,14 @@ meson setup --buildtype=release -Ddefault_library=static ..
 ninja
 ninja install
 
+
+#libslirp
+cd $WORKSPACE
+aria2c -x2 -R https://gitlab.freedesktop.org/slirp/libslirp/-/archive/master/libslirp-master.tar.bz2
+tar -vxf libslirp-master.tar.bz2
+cd libslirp-master
+meson setup --default-library static build 
+ninja -C build install 
 
 #libusb
 cd $WORKSPACE
