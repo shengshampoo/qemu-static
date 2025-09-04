@@ -5,6 +5,6 @@ set -e
 . $(dirname $0)/base
 
 WORKDIR "/work/out/${QEMU_SRC_BASENAME}"
-RUN sed -i 's@unsigned int@size_t@' /work/out/${QEMU_SRC_BASENAME}/util/crc32c.c
-RUN sed -i 's@unsigned int@size_t@' /work/out/${QEMU_SRC_BASENAME}/include/qemu/crc32c.h
+RUN sed -i 's@unsigned int@size_t@' /work/src/${QEMU_SRC_BASENAME}/util/crc32c.c
+RUN sed -i 's@unsigned int@size_t@' /work/src/${QEMU_SRC_BASENAME}/include/qemu/crc32c.h
 RUN make -j$(nproc)
