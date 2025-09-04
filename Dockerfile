@@ -27,6 +27,7 @@ RUN apk add --no-cache \
 
 # required to compile Slirp as static lib and qemu-system
 RUN apk add --no-cache \
+ util-linux-static \
  bzip2-static ncurses-static \
  libxkbcommon-static libxkbcommon-dev \
  libslirp-dev libx11-static zstd-static \
