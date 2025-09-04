@@ -20,7 +20,6 @@ RUN apk add --no-cache \
  zstd-dev zstd-static \
  pcre2-dev pcre2-static \
  flex swig bison py3-setuptools \
- glib-dev glib-static fuse3-dev fuse3-static \
  libgcrypt-dev libgcrypt-static nettle-dev nettle-static libgpg-error-dev libgpg-error-static \
  lzo-dev passt gmp-dev gmp-static \
  bash xz git patch aria2 curl cmake
@@ -28,7 +27,6 @@ RUN apk add --no-cache \
 
 # required to compile Slirp as static lib and qemu-system
 RUN apk add --no-cache \
- util-linux-static \
  bzip2-static ncurses-static \
  libxkbcommon-static libxkbcommon-dev \
  libslirp-dev libx11-static zstd-static \
