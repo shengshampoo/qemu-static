@@ -97,7 +97,7 @@ tar -vxf usbredir-0.15.0.tar.xz
 cd usbredir-0.15.0
 mkdir build
 cd build
-meson setup --buildtype=release -Ddefault_library=static ..
+LDFLAGS='-lblkid -lmount -luuid -leconf' meson setup --buildtype=release -Ddefault_library=static ..
 ninja
 ninja install
 
