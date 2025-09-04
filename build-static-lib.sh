@@ -9,7 +9,8 @@ cd $WORKSPACE
 aria2c -x2 -R https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.1.tar.xz
 tar -vxf util-linux-2.41.1.tar.xz
 cd util-linux-2.41.1
-./autogen.sh && ./configure --prefix=/usr --enable-static --enable-shared
+./autogen.sh && ./configure --prefix=/usr --enable-static --disable-shared  --disable-all-programs \
+  --enable-libmount --enable-libblkid --enable-libuuid
 make -j8
 make install
 
