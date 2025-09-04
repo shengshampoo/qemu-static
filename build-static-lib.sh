@@ -33,7 +33,7 @@ tar -vxf glib-2.85.4.tar.xz
 cd glib-2.85.4
 mkdir build
 cd build
-meson setup --buildtype=release -Ddefault_library=static -Dtests=false ..
+LDFLAGS='-lblkid -lmount -luuid -leconf' meson setup --buildtype=release -Ddefault_library=static -Dtests=false ..
 ninja
 ninja install
 
