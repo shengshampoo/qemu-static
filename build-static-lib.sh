@@ -4,17 +4,6 @@ WORKSPACE=/tmp/workspace
 mkdir -p $WORKSPACE
 
 
-# util-linux
-cd $WORKSPACE
-aria2c -x2 -R https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.1.tar.xz
-tar -vxf util-linux-2.41.1.tar.xz
-cd util-linux-2.41.1
-./autogen.sh && ./configure --prefix=/usr --enable-static --disable-shared  --disable-all-programs \
-  --enable-libmount --enable-libblkid --enable-libuuid
-make -j8
-make install
-
-
 # libeconf
 cd $WORKSPACE
 git clone https://github.com/openSUSE/libeconf.git
@@ -24,6 +13,17 @@ cd build
 meson setup --buildtype=release -Ddefault_library=static -Dprefix=/usr ..
 ninja
 ninja install
+
+
+# util-linux
+cd $WORKSPACE
+aria2c -x2 -R https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.1.tar.xz
+tar -vxf util-linux-2.41.1.tar.xz
+cd util-linux-2.41.1
+./autogen.sh && ./configure --prefix=/usr --enable-static --disable-shared  --disable-all-programs \
+  --enable-libmount --enable-libblkid --enable-libuuid
+make -j8
+make install
 
 
 #glib
