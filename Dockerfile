@@ -28,7 +28,7 @@ RUN apk add --no-cache \
  bzip2-devel bzip2-devel-static ncurses-devel-static \
  libpng-devel libpng-devel-static \
  libxkbcommon-devel-static libxkbcommon-devel \
- libx11-devel-static libunwind-devel libunwind-devel-static libbsd-devel libbsd-devel-static \
+ libx11-devel-static libunwind-nongnu-devel-static libunwind-nongnu-devel libbsd-devel libbsd-devel-static \
  git meson ninja gettext-devel-static \
  liburing-devel-static liburing-devel libaio-devel-static libaio-devel \
  openssl3-devel-static openssl3-devel \
