@@ -25,6 +25,16 @@ ninja install
 #make -j8
 #make install
 
+# libjpeg-turbo
+cd $WORKSPACE
+git clone https://github.com/libjpeg-turbo/libjpeg-turbo.git 
+cd libjpeg-turbo 
+mkdir build 
+cd build 
+cmake -G Ninja -DCMAKE_INSTALL_PREFIX=/usr -DWITH_JPEG8=1 -DENABLE_SHARED=false -DENABLE_STATIC=true .. 
+ninja 
+ninja install 
+
 
 #glib
 cd $WORKSPACE
