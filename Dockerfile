@@ -6,7 +6,7 @@ RUN apk upgrade
 
 # required by qemu
 RUN apk add --no-cache \
- gmake \
+ gmake nasm musl-devel-static \
  perl chimera-repo-user \
  python python-devel \
  libatomic-chimera-devel libatomic-chimera-devel-static libarchive-progs libgcc-chimera cargo rust rust-src rust-bindgen rust-std \
@@ -19,7 +19,7 @@ RUN apk add --no-cache \
  flex swig bison python-setuptools \
  libgcrypt-devel libgcrypt-devel-static nettle-devel nettle-devel-static \
  lzo-devel-static lzo-devel passt gmp-devel gmp-devel-static \
- bash xz git chimerautils-extra aria2 curl cmake file \
+ bash xz git chimerautils-extra aria2 curl cmake file nasm \
  gettext gettext-devel autoconf automake libtool sqlite-devel sqlite-devel-static
 
 
@@ -58,6 +58,8 @@ COPY command/configure command/configure
 RUN /work/command/configure
 
 COPY command/make command/make
+ENV RUSTFLAGS="-C target-feature=+crt-static -C linker=clang -C strip=symbols -C opt-level=s target=x86_64-chimera-linux-musl"
+ENV CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_LINKER=clang
 RUN /work/command/make
 
 COPY command/install command/install
