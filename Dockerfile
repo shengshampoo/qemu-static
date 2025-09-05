@@ -7,7 +7,7 @@ RUN apk upgrade
 # required by qemu
 RUN apk add --no-cache \
  gmake \
- perl \
+ perl chimera-repo-user \
  python python-devel \
  libatomic-chimera-devel libatomic-chimera-devel-static libarchive-progs libgcc-chimera cargo rust rust-src rust-bindgen rust-std \
  clang clang-devel clang-devel-static libunwind-devel libunwind-devel-static \
