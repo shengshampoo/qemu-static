@@ -69,12 +69,12 @@ tar -xjf libusb-1.0.29.tar.bz2
 cd libusb-1.0.29
 mkdir -p ./build ./build2
 cd build
-../configure
+../configure --prefix=/usr
 make -j8
 make install
 #libusb static
 cd $WORKSPACE/libusb-1.0.29/build2
-../configure --enable-static --disable-shared
+../configure --enable-static --disable-shared --prefix=/usr
 make -j8
 make install
 
