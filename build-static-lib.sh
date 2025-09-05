@@ -34,7 +34,7 @@ cd glib-2.85.4
 mkdir build
 cd build
 #LDFLAGS='-lblkid -lmount -luuid -leconf' meson setup --buildtype=release -Ddefault_library=static -Dtests=false ..
-LDFLAGS='-leconf' meson setup --buildtype=release -Ddefault_library=static -Dtests=false ..
+LDFLAGS='-leconf' meson setup --buildtype=release -Ddefault_library=static -Dtests=false -Dprefix=/usr ..
 ninja
 ninja install
 
