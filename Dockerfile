@@ -31,7 +31,7 @@ RUN apk add --no-cache \
  bzip2-dev bzip2-static ncurses-static \
  libpng-dev libpng-static libjpeg-turbo-static libjpeg-turbo-dev \
  libxkbcommon-static libxkbcommon-dev \
- libx11-static zstd-static \
+ libx11-static zstd-static libunwind-dev libunwind-static \
  git meson ninja-build gettext-static libjpeg-turbo-static cyrus-sasl-static \
  build-base liburing-dev libaio-dev alpine-sdk \
  libsndfile-static libsndfile-dev openssl-libs-static \
