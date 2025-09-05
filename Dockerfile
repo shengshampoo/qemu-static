@@ -6,7 +6,7 @@ RUN apk upgrade
 
 # required by qemu
 RUN apk add --no-cache \
- make \
+ gmake \
  perl \
  python python-devel \
  libatomic-chimera-devel libatomic-chimera-devel-static libarchive-progs libgcc-chimera cargo rust rust-src rust-bindgen rust-std \
@@ -19,7 +19,7 @@ RUN apk add --no-cache \
  flex swig bison python-setuptools \
  libgcrypt-devel libgcrypt-devel-static nettle-devel nettle-devel-static \
  lzo-devel-static lzo-devel passt gmp-devel gmp-devel-static \
- bash xz git patch aria2 curl cmake \
+ bash xz git chimerautils-extra aria2 curl cmake \
  gettext gettext-devel autoconf automake libtool sqlite-devel sqlite-devel-static
 
 
