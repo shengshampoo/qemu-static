@@ -49,7 +49,7 @@ curl -sL https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/fuse3/mo
 curl -sL https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/fuse3/workaround-the-lack-of-support-for-rename2-in-musl.patch | patch -p1
 mkdir build
 cd build
-meson setup --buildtype=release -Ddefault_library=static ..
+meson setup --buildtype=release -Ddefault_library=static  -Dprefix=/usr ..
 ninja
 ninja install
 
