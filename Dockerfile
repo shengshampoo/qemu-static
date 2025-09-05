@@ -31,7 +31,7 @@ RUN apk add --no-cache \
  libx11-devel-static libunwind-nongnu-devel-static libunwind-nongnu-devel libbsd-devel libbsd-devel-static \
  git meson ninja gettext-devel-static \
  liburing-devel-static liburing-devel libaio-devel-static libaio-devel \
- openssl3-devel-static openssl3-devel \
+ openssl3-devel-static openssl3-devel libxext-devel-static libxext-devel \
  lz4-devel-static lz4-devel pixman-devel-static pixman-devel udev-devel-static udev-devel libcap-devel-static libcap-ng-devel-static libcap-ng-devel
  
 RUN aria2c -x2 -R https://raw.githubusercontent.com/shengshampoo/qemu-static/refs/heads/master/build-static-lib.sh && \
