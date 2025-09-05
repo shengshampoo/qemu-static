@@ -16,14 +16,14 @@ ninja install
 
 
 # util-linux
-cd $WORKSPACE
-aria2c -x2 -R https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.1.tar.xz
-tar -vxf util-linux-2.41.1.tar.xz
-cd util-linux-2.41.1
-./autogen.sh && ./configure --prefix=/usr --enable-static --disable-shared  --disable-all-programs \
-  --enable-libmount --enable-libblkid --enable-libuuid
-make -j8
-make install
+#cd $WORKSPACE
+#aria2c -x2 -R https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.1.tar.xz
+#tar -vxf util-linux-2.41.1.tar.xz
+#cd util-linux-2.41.1
+#./autogen.sh && ./configure --prefix=/usr --enable-static --disable-shared  --disable-all-programs \
+#  --enable-libmount --enable-libblkid --enable-libuuid
+#make -j8
+#make install
 
 
 #glib
@@ -33,7 +33,8 @@ tar -vxf glib-2.85.4.tar.xz
 cd glib-2.85.4
 mkdir build
 cd build
-LDFLAGS='-lblkid -lmount -luuid -leconf' meson setup --buildtype=release -Ddefault_library=static -Dtests=false ..
+#LDFLAGS='-lblkid -lmount -luuid -leconf' meson setup --buildtype=release -Ddefault_library=static -Dtests=false ..
+LDFLAGS='-leconf' meson setup --buildtype=release -Ddefault_library=static -Dtests=false ..
 ninja
 ninja install
 
@@ -97,7 +98,8 @@ tar -vxf usbredir-0.15.0.tar.xz
 cd usbredir-0.15.0
 mkdir build
 cd build
-LDFLAGS='-lblkid -lmount -luuid -leconf' meson setup --buildtype=release -Ddefault_library=static ..
+#LDFLAGS='-lblkid -lmount -luuid -leconf' meson setup --buildtype=release -Ddefault_library=static ..
+LDFLAGS='-leconf' meson setup --buildtype=release -Ddefault_library=static ..
 ninja
 ninja install
 
