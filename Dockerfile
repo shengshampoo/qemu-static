@@ -1,7 +1,5 @@
-FROM alpine:latest
+FROM chimeralinux/chimera
 
-# https://mirrors.alpinelinux.org/
-RUN sed -i 's@dl-cdn.alpinelinux.org@ftp.halifax.rwth-aachen.de@g' /etc/apk/repositories
 
 RUN apk update
 RUN apk upgrade
@@ -9,33 +7,32 @@ RUN apk upgrade
 # required by qemu
 RUN apk add --no-cache \
  make \
- samurai \
  perl \
- python3 python3-dev \
- gcc \
- libc-dev \
+ python python-devel \
+ libatomic-chimera-devel libatomic-chimera-devel-static libarchive-progs libgcc-chimera cargo rust rust-src rust-std \
+ clang clang-devel clang-devel-static libunwind-devel libunwind-devel-static \
  pkgconf \
  linux-headers \
- zlib-dev zlib-static \
- zstd-dev zstd-static \
- pcre2-dev pcre2-static \
- flex swig bison py3-setuptools \
- libgcrypt-dev libgcrypt-static nettle-dev nettle-static libgpg-error-dev libgpg-error-static \
- lzo-dev passt gmp-dev gmp-static \
+ zlib-ng-compat-devel zlib-ng-compat-devel-static \
+ zstd-devel zstd-devel-static \
+ pcre2-devel pcre2-devel-static \
+ flex swig bison python-setuptools \
+ libgcrypt-devel libgcrypt-devel-static nettle-devel nettle-devel-static \
+ lzo-devel-static lzo-devel passt gmp-devel gmp-devel-static \
  bash xz git patch aria2 curl cmake \
- gettext gettext-dev autoconf automake libtool sqlite-dev sqlite-static
+ gettext gettext-devel autoconf automake libtool sqlite-devel sqlite-devel-static
 
 
 # required to compile Slirp as static lib and qemu-system
 RUN apk add --no-cache \
- bzip2-dev bzip2-static ncurses-static \
- libpng-dev libpng-static libjpeg-turbo-static libjpeg-turbo-dev \
+ bzip2-devel bzip2-devel-static ncurses-devel-static \
+ libpng-devel libpng-devel-static \
  libxkbcommon-static libxkbcommon-dev \
- libx11-static zstd-static libunwind-dev libunwind-static libbsd-dev libbsd-static \
- git meson ninja-build gettext-static libjpeg-turbo-static cyrus-sasl-static \
- build-base liburing-dev libaio-dev alpine-sdk \
- libsndfile-static libsndfile-dev openssl-libs-static \
- lz4-static pixman-static pixman-dev libudev-zero-dev libcap-static libcap-ng-static libcap-ng-dev
+ libx11-devel-static libunwind-devel libunwind-devel-static libbsd-devel libbsd-devel-static \
+ git meson ninja gettext-devel-static \
+ liburing-devel-static liburing-devel libaio-devel-static libaio-devel \
+ openssl3-devel-static openssl3-devel \
+ lz4-devel-static lz4-devel pixman-devel-static pixman-devel libcap-devel-static libcap-ng-devel-static libcap-ng-devel
  
 RUN aria2c -x2 -R https://raw.githubusercontent.com/shengshampoo/qemu-static/refs/heads/master/build-static-lib.sh && \
 chmod +x build-static-lib.sh && ./build-static-lib.sh
