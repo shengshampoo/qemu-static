@@ -132,7 +132,7 @@ tar -vxf libvncserver-LibVNCServer-0.9.15.tar.gz
 cd libvncserver-LibVNCServer-0.9.15
 mkdir build
 cd build
-cmake .. -G Ninja -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=/usr
+cmake .. -G Ninja -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 ninja && DESTDIR=/ ninja install
 
 # dtc libfdt
