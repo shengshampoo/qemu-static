@@ -9,7 +9,7 @@ RUN apk add --no-cache \
  make \
  perl \
  python python-devel \
- libatomic-chimera-devel libatomic-chimera-devel-static libarchive-progs libgcc-chimera cargo rust rust-src rust-std \
+ libatomic-chimera-devel libatomic-chimera-devel-static libarchive-progs libgcc-chimera cargo rust rust-src rust-bindgen rust-std \
  clang clang-devel clang-devel-static libunwind-devel libunwind-devel-static \
  pkgconf \
  linux-headers \
