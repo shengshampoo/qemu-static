@@ -10,7 +10,7 @@ RUN apk add --no-cache \
  perl chimera-repo-user \
  python python-devel \
  libatomic-chimera-devel libatomic-chimera-devel-static libarchive-progs libgcc-chimera cargo rust rust-src rust-bindgen rust-std \
- clang clang-devel clang-devel-static libunwind-devel libunwind-devel-static \
+ clang clang-devel clang-devel-static libunwind-devel libunwind-devel-static llvm-binutils \
  pkgconf \
  linux-headers \
  zlib-ng-compat-devel zlib-ng-compat-devel-static \
