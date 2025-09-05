@@ -27,7 +27,7 @@ ninja install
 
 
 #glib
-cd $WORKSPACE 
+cd $WORKSPACE
 aria2c -x2 -R https://download.gnome.org/sources/glib/2.85/glib-2.85.4.tar.xz
 tar -vxf glib-2.85.4.tar.xz
 cd glib-2.85.4
