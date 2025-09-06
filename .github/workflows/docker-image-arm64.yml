@@ -1,0 +1,30 @@
+name: Docker Image CI - AArch64 for Chimera Linux
+
+on:
+  push:
+    branches: [ "chimeralinux" ]
+  pull_request:
+    branches: [ "chimeralinux" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-24.04-arm
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build --tag qemu .
+
+    - name: build static qemu with alpine linux docker 
+      run: |
+        docker run --cidfile=qemu.cid qemu true
+        docker cp "$(cat qemu.cid):work/artifact/." .
+       
+
+    - name: Upload qemu
+      uses: actions/upload-artifact@v4
+      with:
+        name: qemu-static
+        path: ./*.tar.xz
