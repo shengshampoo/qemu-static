@@ -26,5 +26,5 @@ jobs:
     - name: Upload qemu
       uses: actions/upload-artifact@v4
       with:
-        name: qemu-static
+        name: qemu-static-x86_64
         path: ./*.tar.xz
