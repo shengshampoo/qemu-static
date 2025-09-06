@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Image CI - X86_64 for Alpine Linux
 
 on:
   push:
