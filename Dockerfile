@@ -29,13 +29,13 @@ RUN apk add --no-cache \
 # required to compile Slirp as static lib and qemu-system
 RUN apk add --no-cache \
  bzip2-dev bzip2-static ncurses-static \
- libpng-dev libpng-static libjpeg-turbo-static libjpeg-turbo-dev \
+ libpng-dev libpng-static \
  libxkbcommon-static libxkbcommon-dev \
  libx11-static zstd-static libunwind-dev libunwind-static libbsd-dev libbsd-static \
- git meson ninja-build gettext-static libjpeg-turbo-static cyrus-sasl-static \
+ git meson ninja-build gettext-static cyrus-sasl-static \
  build-base liburing-dev libaio-dev alpine-sdk \
  libsndfile-static libsndfile-dev openssl-libs-static \
- lz4-static pixman-static pixman-dev libudev-zero-dev libcap-static libcap-ng-static libcap-ng-dev
+ lz4-static lz4-dev pixman-static pixman-dev libudev-zero-dev libcap-static libcap-ng-static libcap-ng-dev
  
 RUN aria2c -x2 -R https://raw.githubusercontent.com/shengshampoo/qemu-static/refs/heads/master/build-static-lib.sh && \
 chmod +x build-static-lib.sh && ./build-static-lib.sh
