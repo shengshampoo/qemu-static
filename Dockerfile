@@ -67,4 +67,5 @@ COPY command/install command/install
 RUN /work/command/install
 
 COPY command/package command/package
+ENV XZ_OPT=-e9
 RUN /work/command/package
