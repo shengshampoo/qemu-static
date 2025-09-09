@@ -34,9 +34,9 @@ RUN apk add --no-cache \
  openssl3-devel-static openssl3-devel libxext-devel-static libxext-devel \
  lz4-devel-static lz4-devel pixman-devel-static pixman-devel udev-devel-static udev-devel libcap-devel-static libcap-ng-devel-static libcap-ng-devel
  
-RUN aria2c -x2 -R https://raw.githubusercontent.com/shengshampoo/qemu-static/refs/heads/chimeralinux/build-static-lib.sh && \
-chmod +x build-static-lib.sh && ./build-static-lib.sh
-    
+COPY build-static-lib.sh build-static-lib.sh
+RUN chmod +x ./build-static-lib.sh
+RUN bash ./build-static-lib.sh    
 
 
 # additional
