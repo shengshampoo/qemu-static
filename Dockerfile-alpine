@@ -58,6 +58,7 @@ COPY command/patch command/patch
 RUN /work/command/patch
 
 COPY command/configure-alpine command/configure
+RUN chmod +x /work/command/configure
 RUN /work/command/configure
 
 COPY command/make command/make
