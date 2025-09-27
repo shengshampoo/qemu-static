@@ -1,4 +1,4 @@
-name: Docker Image CI - X86_64/AARCH64 for Alpine Linux
+name: Docker Image CI - X86_64/AARCH64 for Alpine/Chimera Linux
 
 on:
   push:
@@ -12,12 +12,13 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, ubuntu-24.04-arm]
+        dockeros: [alpine, chimera]
     runs-on: ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build --tag qemu .
+      run: docker build -f Dockerfile-${{ matrix.dockeros }} --tag qemu .
 
     - name: build static qemu with alpine linux docker 
       run: |
@@ -28,5 +29,5 @@ jobs:
     - name: Upload qemu
       uses: actions/upload-artifact@v4
       with:
-        name: qemu-static-${{ matrix.os }}
+        name: qemu-static-${{ matrix.dockeros }}-${{ matrix.os }}
         path: ./*.tar.xz
