@@ -19,7 +19,7 @@ RUN apk add --no-cache \
  flex swig bison python-setuptools \
  libgcrypt-devel libgcrypt-devel-static nettle-devel nettle-devel-static \
  lzo-devel-static lzo-devel passt gmp-devel gmp-devel-static \
- bash xz git chimerautils-extra aria2 curl cmake file nasm jq \
+ bash xz git chimerautils chimerautils-extra aria2 curl cmake file nasm jq \
  gettext gettext-devel autoconf automake libtool sqlite-devel sqlite-devel-static
 
 
