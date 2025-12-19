@@ -116,7 +116,7 @@ ninja install
 
 #SDL2
 cd $WORKSPACE
-aria2c -x2 -R https://github.com/libsdl-org/SDL/releases/download/release-2.32.8/SDL2-2.32.10.tar.gz
+aria2c -x2 -R https://github.com/libsdl-org/SDL/releases/download/release-2.32.10/SDL2-2.32.10.tar.gz
 tar -vxf SDL2-2.32.10.tar.gz
 cd SDL2-2.32.10
 mkdir build
