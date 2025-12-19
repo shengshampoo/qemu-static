@@ -17,7 +17,7 @@ ninja install
 
 # util-linux
 #cd $WORKSPACE
-#aria2c -x2 -R https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.1.tar.xz
+#aria2c -x2 -R https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.3.tar.xz
 #tar -vxf util-linux-2.41.1.tar.xz
 #cd util-linux-2.41.1
 #./autogen.sh && ./configure --prefix=/usr --enable-static --disable-shared  --disable-all-programs \
@@ -38,9 +38,9 @@ ninja install
 
 #glib
 cd $WORKSPACE
-aria2c -x2 -R https://download.gnome.org/sources/glib/2.85/glib-2.85.4.tar.xz
-tar -vxf glib-2.85.4.tar.xz
-cd glib-2.85.4
+aria2c -x2 -R https://download.gnome.org/sources/glib/2.87/glib-2.87.0.tar.xz
+tar -vxf glib-2.87.0.tar.xz
+cd glib-2.87.0
 mkdir build
 cd build
 #LDFLAGS='-lblkid -lmount -luuid -leconf' meson setup --buildtype=release -Ddefault_library=static -Dtests=false ..
@@ -51,9 +51,9 @@ ninja install
 
 #fuse
 cd $WORKSPACE
-aria2c -x2 -R https://github.com/libfuse/libfuse/releases/download/fuse-3.17.4/fuse-3.17.4.tar.gz
-tar -vxf fuse-3.17.4.tar.gz
-cd fuse-3.17.4
+aria2c -x2 -R https://github.com/libfuse/libfuse/releases/download/fuse-3.18.0/fuse-3.18.0.tar.gz
+tar -vxf fuse-3.18.8.tar.gz
+cd fuse-3.18.0
 curl -sL https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/fuse3/dont-mknod-dev-fuse.patch | patch -p1
 curl -sL https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/fuse3/mount_util.c-check-if-utab-exists-before-update.patch | patch -p1
 curl -sL https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/fuse3/workaround-the-lack-of-support-for-rename2-in-musl.patch | patch -p1
@@ -116,9 +116,9 @@ ninja install
 
 #SDL2
 cd $WORKSPACE
-aria2c -x2 -R https://github.com/libsdl-org/SDL/releases/download/release-2.32.8/SDL2-2.32.8.tar.gz
-tar -vxf SDL2-2.32.8.tar.gz
-cd SDL2-2.32.8
+aria2c -x2 -R https://github.com/libsdl-org/SDL/releases/download/release-2.32.10/SDL2-2.32.10.tar.gz
+tar -vxf SDL2-2.32.10.tar.gz
+cd SDL2-2.32.10
 mkdir build
 cd build 
 ../configure --enable-static --disable-shared --enable-pulseaudio --prefix=/usr
