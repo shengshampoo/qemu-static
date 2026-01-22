@@ -6,4 +6,4 @@ set -e
 
 
 WORKDIR /work/artifact
-RUN tar cJf "${QEMU_ARTIFACT_BASENAME}.tar.xz" -C /work/dst "${QEMU_ARTIFACT_BASENAME}"
+RUN tar cJf "${QEMU_ARTIFACT_BASENAME}-${QEMU_BUILD_OS}.tar.xz" -C /work/dst "${QEMU_ARTIFACT_BASENAME}"
