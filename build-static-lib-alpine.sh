@@ -38,9 +38,9 @@ ninja install
 
 #glib
 cd $WORKSPACE
-aria2c -x2 -R https://download.gnome.org/sources/glib/2.87/glib-2.87.2.tar.xz
-tar -vxf glib-2.87.2.tar.xz
-cd glib-2.87.2
+aria2c -x2 -R https://download.gnome.org/sources/glib/2.88/glib-2.88.0.tar.xz
+tar -vxf glib-2.88.0.tar.xz
+cd glib-2.88.0
 mkdir build
 cd build
 #LDFLAGS='-lblkid -lmount -luuid -leconf' meson setup --buildtype=release -Ddefault_library=static -Dtests=false ..
@@ -51,9 +51,9 @@ ninja install
 
 #fuse
 cd $WORKSPACE
-aria2c -x2 -R https://github.com/libfuse/libfuse/releases/download/fuse-3.18.1/fuse-3.18.1.tar.gz
-tar -vxf fuse-3.18.1.tar.gz
-cd fuse-3.18.1
+aria2c -x2 -R https://github.com/libfuse/libfuse/releases/download/fuse-3.18.2/fuse-3.18.2.tar.gz
+tar -vxf fuse-3.18.2.tar.gz
+cd fuse-3.18.2
 curl -sL https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/fuse3/dont-mknod-dev-fuse.patch | patch -p1
 curl -sL https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/fuse3/mount_util.c-check-if-utab-exists-before-update.patch | patch -p1
 curl -sL https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/fuse3/workaround-the-lack-of-support-for-rename2-in-musl.patch | patch -p1
